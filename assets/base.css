@@ -80,7 +80,7 @@ a:visited, a:hover {
 
 .content2 {
   position: relative;
-  background: #000000 url(testbanner.jpg) no-repeat center top fixed;
+  background: #ffffff url(testbanner.jpg) no-repeat center top fixed;
   background-size: initial;
   min-height: 550px;
   max-height: 550px;
@@ -88,7 +88,7 @@ a:visited, a:hover {
  
 .content {
   position: relative;
-  background: #000000 url(testbanner.jpg) no-repeat center top fixed;
+  background: #ffffff url(testbanner.jpg) no-repeat center top fixed;
   background-size: initial;
   min-height: 550px;
   max-height: 550px;
@@ -101,7 +101,7 @@ a:visited, a:hover {
 .content_black {
   position: relative;
   min-height: 60px;
-  background: #000000 no-repeat center center fixed;
+  background: #ffffff no-repeat center center fixed;
   background-size: cover;
  }
 .description, .some-related-articles {
