@@ -115,15 +115,15 @@ a:visited, a:hover {
   text-align: center;
 }
 .some-related-articles {
-  color: #1F1F1F;
+  color: #485169;
 }
 .some-related-articles h1 {
-  color: #3b0b2c;
+  color: #485169;
   margin-top: 60px;
   text-transform: uppercase;
 }
 .some-related-articles h2 a:link, .some-related-articles h2 a:visited  {
-  color: #3b0b2c;
+  color: #485169;
   transition: color 0.1s ease;
 }
 .some-related-articles h2 a:hover {
@@ -141,17 +141,17 @@ a:visited, a:hover {
   text-decoration: underline;
 }
 .summary {
-  color: #d9dee2;
+  color: #485169;
   margin-top: 40px;
   margin-bottom: 60px;
 }
 .summary2 {
-  color: #d9dee2;
+  color: #485169;
   margin-top: 20px;
   margin-bottom: 60px;
 }
 .summary3 {
-  color: #d9dee2;
+  color: #485169;
   margin-top: 20px;
   margin-bottom: 60px;
   font-size: 12px;
@@ -173,8 +173,8 @@ a:visited, a:hover {
 }
 .button-dark, .button-dark:visited {
   margin: 20px 10px 30px 0;
-  color: #464646;
-  border-color: #464646;
+  color: #485169;
+  border-color: #485169;
 
 }
 .button:hover, .button-dark:hover {
@@ -211,7 +211,7 @@ a:visited, a:hover {
   font-family: 'Space Mono', monospace;
   position: absolute;
   top: 370;
-  color: #3b0b2c;
+  color: #485169;
   background: rgba(1,1,1, 0);
   font-weight: 300;
   padding: 8px 12px;
