@@ -15,7 +15,7 @@ body {
 font-family: 'Lato', sans-serif;
   background-color: #ffffff;
   color: #000000;
-  text-align: left;
+  text-align: center;
 }
 h1, h2 {
 font-family: 'Lato', ;
@@ -144,17 +144,17 @@ a:visited, a:hover {
   text-decoration: underline;
 }
 .summary {
-  color: #0051ff;
+  color: #ffffff;
   margin-top: 40px;
   margin-bottom: 60px;
 }
 .summary2 {
-  color: #0051ff;
+  color: #ffffff;
   margin-top: 20px;
   margin-bottom: 60px;
 }
 .summary3 {
-  color: #0051ff;
+  color: #ffffff;
   margin-top: 20px;
   margin-bottom: 60px;
   font-size: 12px;
