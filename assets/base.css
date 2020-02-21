@@ -95,7 +95,7 @@ a:visited, a:hover {
  }
  .content_contact {
   position: relative;
-  background: #3b0b2c no-repeat center center fixed;
+  background: #485169 no-repeat center center fixed;
   background-size: cover;
  }
 .content_black {
@@ -127,7 +127,7 @@ a:visited, a:hover {
   transition: color 0.1s ease;
 }
 .some-related-articles h2 a:hover {
-  color: #4F62CE;
+  color: #485169;
   transition: color 0.3s ease;
 }
 /* SPECIAL */
