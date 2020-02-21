@@ -80,7 +80,7 @@ a:visited, a:hover {
 
 .content2 {
   position: relative;
-  background: #ffffff url(testbanner.jpg) no-repeat center top fixed;
+  background: #ffffff url(banner_new.png) no-repeat center top fixed;
   background-size: initial;
   min-height: 550px;
   max-height: 550px;
@@ -88,7 +88,7 @@ a:visited, a:hover {
  
 .content {
   position: relative;
-  background: #ffffff url(testbanner.jpg) no-repeat center top fixed;
+  background: #ffffff url(banner_new.png) no-repeat center top fixed;
   background-size: initial;
   min-height: 550px;
   max-height: 550px;
