@@ -1,5 +1,5 @@
 /* WEB FONT */
-@import url(http://fonts.googleapis.com/css?family=Nunito);
+@import url(http://fonts.googleapis.com/css?family=Alata);
 
 /* RESET */
 * {
@@ -12,13 +12,13 @@ html {
   scroll-behavior: smooth;
 }
 body {
-font-family: 'Asap', ;
+font-family: 'Alata', ;
   background-color: #ffffff;
   color: #000000;
   text-align: left;
 }
 h1, h2 {
-font-family: 'Asap', ;
+font-family: 'Alata', ;
 }
 h1 {
   font-weight: 400;
