@@ -6,7 +6,7 @@
   z-index: 9999;
   width: 100%;
   height: 70px;
-  background-color: #ffffff;
+  background-color: #a80d0d;
 }
 
 /* The element at the top of the page right after the fixed navigation bar
@@ -26,10 +26,10 @@
   margin: 0 auto;
 }
 .menu a, .menu a:visited {
-  color: #00c3ff;
+  color: #000000;
 }
 .menu a:hover, .menu a:target {
-  color: #0051ff;
+  color: #000000;
 }
 .menu-items {
   display: inline-block;
@@ -43,7 +43,7 @@
   margin-left: 10px;
 }
 a.sitename, a:visited.sitename {
-  color: #0051ff;
+  color: #000000;
 }
 .menu-items li {
   display: inline-block;
@@ -64,7 +64,7 @@ a.sitename, a:visited.sitename {
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center left;
-  color: #0051ff;
+  color: #000000;
 }
 .show {
   background-image: url(assets/down-arrow-icon.png);
@@ -88,7 +88,7 @@ a.sitename, a:visited.sitename {
     display: none; 
     width: 100%;
     margin-top: 50px;
-    background-color: #008378;
+    background-color: #000000;
   }
   .menu-items li {
     display: block;
