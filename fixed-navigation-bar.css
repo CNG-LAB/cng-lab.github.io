@@ -12,7 +12,7 @@
 /* The element at the top of the page right after the fixed navigation bar
    MUST have sufficient top margin or else it will be covered by the bar */
 .content {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* Example responsive navigation menu  */
