@@ -1,5 +1,5 @@
 /* WEB FONT */
-@import url(http://fonts.googleapis.com/css?family=Nunito);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
 
 /* RESET */
 * {
@@ -12,30 +12,30 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Alatsi', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #ffffff;
-  color: #2e2e2e;
+  color: #271cff;
   text-align: center;
 }
 h1, h2 {
-  font-family: 'Alatsi', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 h1 {
   font-weight: 400;
   font-size: 24px;
   line-height: 46px;
-  color: #0015ff;
+  color: #271cff;
 }
 h2 {
   font-weight: 500;
   font-size: 16px;
   line-height: 25px;
   margin-bottom: -20px;
-  color: #0015ff;
+  color: #271cff;
 }
 h3 {
-  font-family: 'Alatsi', sans-serif;
-  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  color: #271cff;
   font-weight: 500;
   font-size: 24px;
   line-height: 33px;
@@ -43,14 +43,14 @@ h3 {
 }
 p {
   font-weight: 300;
-  color: #1F1F1F;
+  color: #271cff;
   margin: 20px 0;
   font-size: 16px;
   line-height: 26px;
 }
 h4 {
   font-weight: 300;
-  color: #1F1F1F;
+  color: #271cff;
   margin: 20px 0;
   font-size: 12px;
   line-height: 24px;
@@ -95,7 +95,7 @@ a:visited, a:hover {
  }
  .content_contact {
   position: relative;
-  background: #fbffa8 no-repeat center center fixed;
+  background: #d4d4d4 no-repeat center center fixed;
   background-size: cover;
  }
 .content_black {
@@ -141,17 +141,17 @@ a:visited, a:hover {
   text-decoration: underline;
 }
 .summary {
-  color: #d9dee2;
+  color: #0015ff;
   margin-top: 40px;
   margin-bottom: 60px;
 }
 .summary2 {
-  color: #d9dee2;
+  color: #0015ff;
   margin-top: 20px;
   margin-bottom: 60px;
 }
 .summary3 {
-  color: #d9dee2;
+  color: #0015ff;
   margin-top: 20px;
   margin-bottom: 60px;
   font-size: 12px;
@@ -208,10 +208,10 @@ a:visited, a:hover {
   box-shadow: 0 0 0px #ffffff;
 }
 .css-slideshow figcaption{
-  font-family: 'Alatsi', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   position: absolute;
   top: 370;
-  color: #fbffa8;
+  color: #d6d6d6;
   background: rgba(1,1,1, 0);
   font-weight: 300;
   padding: 8px 12px;
