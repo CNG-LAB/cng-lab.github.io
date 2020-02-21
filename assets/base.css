@@ -118,43 +118,43 @@ a:visited, a:hover {
   text-align: center;
 }
 .some-related-articles {
-  color: #000000;
+  color: #089dff;
 }
 .some-related-articles h1 {
-  color: #ffffff;
+  color: #000000;
   margin-top: 60px;
   text-transform: uppercase;
 }
 .some-related-articles h2 a:link, .some-related-articles h2 a:visited  {
-  color: #ffffff;
+  color: #000000;
   transition: color 0.1s ease;
 }
 .some-related-articles h2 a:hover {
-  color: #ffffff;
+  color: #000000;
   transition: color 0.3s ease;
 }
 /* SPECIAL */
 .onblue:link {
-  color: #FFFFFF;
+  color: #000000;
   font-weight: 400;
 }
 .onblue:visited, .onblue:hover {
-  color: #FFFFFF;
+  color: #000000;
   font-weight: 400;
   text-decoration: underline;
 }
 .summary {
-  color: #ffffff;
+  color: #000000;
   margin-top: 40px;
   margin-bottom: 60px;
 }
 .summary2 {
-  color: #ffffff;
+  color: #000000;
   margin-top: 20px;
   margin-bottom: 60px;
 }
 .summary3 {
-  color: #ffffff;
+  color: #000000;
   margin-top: 20px;
   margin-bottom: 60px;
   font-size: 12px;
