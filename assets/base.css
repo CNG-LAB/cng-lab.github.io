@@ -24,14 +24,14 @@ h1 {
   font-weight: 400;
   font-size: 24px;
   line-height: 46px;
-  color: #fbffa8;
+  color: #0015ff;
 }
 h2 {
   font-weight: 500;
   font-size: 16px;
   line-height: 25px;
   margin-bottom: -20px;
-  color: #fbffa8;
+  color: #0015ff;
 }
 h3 {
   font-family: 'Alatsi', sans-serif;
@@ -57,7 +57,7 @@ h4 {
 }
 a:link,a:active {
   font-weight: 400;
-  color: #fbffa8;
+  color: #0015ff;
   text-decoration: none;
 } 
 .linkwhite {
@@ -67,7 +67,7 @@ a:link,a:active {
 }
 a:visited, a:hover {
   font-weight: 400;
-  color: #fbffa8;
+  color: #0015ff;
   text-decoration: underline;
 }
 .img-circle {
@@ -118,12 +118,12 @@ a:visited, a:hover {
   color: #1F1F1F;
 }
 .some-related-articles h1 {
-  color: #a80d0d;
+  color: #0015ff;
   margin-top: 60px;
   text-transform: uppercase;
 }
 .some-related-articles h2 a:link, .some-related-articles h2 a:visited  {
-  color: #fbffa8;
+  color: #0015ff;
   transition: color 0.1s ease;
 }
 .some-related-articles h2 a:hover {
