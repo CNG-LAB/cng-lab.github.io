@@ -1,5 +1,5 @@
 /* WEB FONT */
-@import url(http://fonts.googleapis.com/css?family=Alata);
+@import url(http://fonts.googleapis.com/css?family=Lato);
 
 /* RESET */
 * {
@@ -12,32 +12,32 @@ html {
   scroll-behavior: smooth;
 }
 body {
-font-family: 'Alata', sans-serif;
+font-family: 'Lato', sans-serif;
   background-color: #ffffff;
   color: #000000;
   text-align: left;
 }
 h1, h2 {
-font-family: 'Alata', ;
+font-family: 'Lato', ;
 }
 h1 {
-  font-weight: 400;
+  font-weight: 700;
   font-style: bold;
   font-size: 24px;
   line-height: 46px;
-  color: #000000;
+  color: #0051ff;
 }
 h2 {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
   font-style: bold;
   line-height: 25px;
   margin-bottom: -20px;
-  color: #000000;
+  color: #0051ff;
 }
 h3 {
-font-family: 'Asap', ;
-  color: #000000;
+font-family: 'Lato', ;
+  color: #0051ff;
   font-weight: 500;
   font-style: bold;
   font-size: 24px;
@@ -118,43 +118,43 @@ a:visited, a:hover {
   text-align: center;
 }
 .some-related-articles {
-  color: #089dff;
+  color: #0051ff;
 }
 .some-related-articles h1 {
-  color: #000000;
+  color: #ffffff;
   margin-top: 60px;
   text-transform: uppercase;
 }
 .some-related-articles h2 a:link, .some-related-articles h2 a:visited  {
-  color: #000000;
+  color: #ffffff;
   transition: color 0.1s ease;
 }
 .some-related-articles h2 a:hover {
-  color: #000000;
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 /* SPECIAL */
 .onblue:link {
-  color: #000000;
+  color: #ffffff;
   font-weight: 400;
 }
 .onblue:visited, .onblue:hover {
-  color: #000000;
+  color: #ffffff;
   font-weight: 400;
   text-decoration: underline;
 }
 .summary {
-  color: #000000;
+  color: #ffffff;
   margin-top: 40px;
   margin-bottom: 60px;
 }
 .summary2 {
-  color: #000000;
+  color: #ffffff;
   margin-top: 20px;
   margin-bottom: 60px;
 }
 .summary3 {
-  color: #000000;
+  color: #ffffff;
   margin-top: 20px;
   margin-bottom: 60px;
   font-size: 12px;
@@ -211,10 +211,10 @@ a:visited, a:hover {
   box-shadow: 0 0 0px #ffffff;
 }
 .css-slideshow figcaption{
-  font-family: 'Asap', ;
+  font-family: 'Lato', ;
   position: absolute;
   top: 370;
-  color: #485169;
+  color: #0051ff;
   background: rgba(1,1,1, 0);
   font-weight: 300;
   padding: 8px 12px;
