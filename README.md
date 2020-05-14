@@ -1,2 +1,2 @@
-# cong-group.github.io
-Website of the cong.
+# cognitive-neuro-genetics
+Website // project
