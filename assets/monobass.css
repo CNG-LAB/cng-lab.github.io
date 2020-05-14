@@ -2,6 +2,11 @@
 
 * { box-sizing: border-box }
 
+#grad {
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+
 body {
     font-family: 'Roboto Mono', sans-serif;
   font-family: Roboto, sans-serif;
