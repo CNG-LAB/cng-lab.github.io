@@ -14,9 +14,32 @@
 </head>
 <body>
 	
-<div class="right-align">
-    <div class="dot bg-cyan"></div>
-</div>
+<header class="center px2 py4">
+  <svg viewBox="0 0 32 32"
+    width="3em"
+    height="3em"
+    class="inline-block mt4 mb4 clickable js-skull"
+    fill="currentColor">
+    <path d="
+      M0 6 H32 V24 L28 25 V28 H4 V25 L0 24z
+      M2 8 V22 L6 23 V26 H26 V23 L30 22 V8z
+      M3 17 A4 4 0 0 0 11 17 A4 4 0 0 0 3 17
+      M21 17 A4 4 0 0 0 29 17 A4 4 0 0 0 21 17 
+    "/>
+  </svg>
+  <div class="mb1">
+    <h1 class="h2 inline-block m0">
+      Skull:
+    </h1>
+    <p class="h2 inline-block m0">Bare bones boilerplate and Basscss theme</p>
+  </div>
+  <div class="h6 bold caps mb3">v<%= version %></div>
+  <a href="<%= download %>" class="h6 caps button ml1 mr1">
+    Download
+  </a>
+</header>
+	
+	
 	
 <nav class="hello">
   <div id="menu" class="menu">
