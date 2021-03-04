@@ -81,6 +81,39 @@ hr {
   box-shadow: inset 0 0 0 999px rgba(0, 0, 128, .25);
 }
 
+.content_contact {
+  position: relative;
+  background: #e1e7eb no-repeat center center fixed;
+  background-size: cover;
+ }
+
+.description, .some-related-articles {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.description {
+  padding-top: 100px;
+  min-height: 250px;
+  text-align: center;
+}
+.some-related-articles {
+  color: #1F1F1F;
+}
+.some-related-articles h1 {
+  color: #0B0B3B;
+  margin-top: 60px;
+  text-transform: uppercase;
+}
+.some-related-articles h2 a:link, .some-related-articles h2 a:visited  {
+  color: #0B0B3B;
+  transition: color 0.1s ease;
+}
+.some-related-articles h2 a:hover {
+  color: #4F62CE;
+  transition: color 0.3s ease;
+}
+
 .sm_icon:hover {
     opacity: 0.7;
 }
