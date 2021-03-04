@@ -83,8 +83,6 @@ hr {
 
 .content_contact {
   position: relative;
-  background: #e1e7eb no-repeat center center fixed;
-  background-size: cover;
  }
 
 .description, .some-related-articles {
@@ -93,10 +91,10 @@ hr {
   margin: 0 auto;
 }
 .description {
-  padding-top: 100px;
-  min-height: 250px;
-  text-align: center;
+  padding-top: 50px;
+  min-height: 100px;
 }
+
 .some-related-articles {
   color: #1F1F1F;
 }
