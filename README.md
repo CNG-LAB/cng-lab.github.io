@@ -1,2 +1,2 @@
-# cognitive-neuro-genetics
+# Lab website of the cognitive neurogenetics group
 Website // project
