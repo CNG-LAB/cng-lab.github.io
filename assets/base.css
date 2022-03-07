@@ -84,8 +84,8 @@ a:visited, a:hover {
     position: relative;
     background: #ffffff url(lab_gif2b.gif) no-repeat top center fixed;
     background-size: initial;
-    min-height: 550px;
-    max-height: 550px;
+    min-height: 300px;
+    max-height: 300px;
  }
 }
 
