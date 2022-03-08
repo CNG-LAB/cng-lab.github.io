@@ -82,7 +82,7 @@ a:visited, a:hover {
 @media screen and (max-width: 600px) {
 .content {
     position: relative;
-    background: #ffffff url(lab_gif2b.gif) no-repeat top center fixed;
+    background: #ffffff url(another_gif_copy.gif) no-repeat top center fixed;
     background-size: initial;
     min-height: 300px;
     max-height: 300px;
