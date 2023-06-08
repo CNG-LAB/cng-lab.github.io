@@ -12,13 +12,13 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'helvetica', sans-serif;
   background-color: #ffffff;
   color: #2e2e2e;
-  text-align: center;
+  text-align: left;
 }
 h1, h2 {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'helvetica', sans-serif;
 }
 h1 {
   font-weight: 600;
