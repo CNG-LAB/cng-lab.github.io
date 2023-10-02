@@ -342,6 +342,9 @@ figure:nth-child(8) {
   .column4 {
     width: 100%;
   }
+  .column {
+    width: 100%;
+  }
 }
 
 <style>
