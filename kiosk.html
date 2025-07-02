@@ -41,29 +41,17 @@
 
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
       width: 90vw;
-      max-width: 1200px;
+      max-width: 900px;
     }
 
-    video {
+    .video-grid iframe {
       width: 100%;
       height: 370px;
-      object-fit: cover;
-      background: black;
-      cursor: pointer;
+      border: none;
       border-radius: 8px;
-      outline: none;
-      transition: transform 0.3s ease;
-    }
-
-    video:hover {
-      transform: scale(1.01);
-    }
-
-    video::-webkit-media-controls {
-      display: none !important;
     }
 
     .artist-labels {
@@ -85,35 +73,16 @@
   <h1 class="page-title">NEUROSONIC</h1>
 
   <div class="video-grid">
-    <video src="videos/output_small.mp4" controls></video>
-    <video src="videos/output2.mp4" controls></video>
-    <video src="videos/hyrogenpart1_dvd.mp4" controls></video>
+    <iframe src="https://player.vimeo.com/video/1098294517" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://player.vimeo.com/video/VIDEO_ID_2" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://player.vimeo.com/video/1098294483" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://player.vimeo.com/video/1098293854" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
   </div>
 
   <div class="artist-labels">
     Martin Panitz<br />
-    Martin Panitz<br />
-    Natural Philosophers with Attitude
+    Natural Philosophers with Attitude<br />
+    Wolf-Julian Neumann
   </div>
-
-  <script>
-    const videos = document.querySelectorAll('video');
-    videos.forEach((video, idx) => {
-      video.addEventListener('play', () => {
-        videos.forEach((v, i) => {
-          if (i !== idx) v.pause();
-        });
-      });
-      video.addEventListener('click', () => {
-        if (video.requestFullscreen) {
-          video.requestFullscreen();
-        } else if (video.webkitRequestFullscreen) {
-          video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) {
-          video.msRequestFullscreen();
-        }
-      });
-    });
-  </script>
 </body>
 </html>
