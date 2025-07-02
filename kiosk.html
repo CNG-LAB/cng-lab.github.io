@@ -3,36 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Museum Video Grid with QR Codes</title>
+  <title>NEUROSONIC</title>
   <style>
     @font-face {
-  font-family: 'Avenir';
-  src: local('Avenir'), local('Avenir Heavy'), local('Avenir-Heavy');
-  font-weight: 900;
-}
+      font-family: 'Avenir';
+      src: local('Avenir'), local('Avenir Heavy'), local('Avenir-Heavy');
+      font-weight: 900;
+    }
 
-html, body {
-  margin: 0; padding: 0;
-  background: black;
-  height: 100%; width: 100%;
-  font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 100;
-  color: #eee;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.page-title {
-  font-family: 'Avenir', sans-serif;
-  font-weight: 900; /* Heavy */
-  font-size: 3rem;
-  color: #fff;
-  text-align: center;
-  margin: 40px 0 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: #eee;
+      font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .page-title {
+      font-family: 'Avenir', sans-serif;
+      font-weight: 900;
+      font-size: 3rem;
+      color: #fff;
+      text-align: center;
+      margin: 40px 0 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
     .video-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -40,7 +46,9 @@ html, body {
       gap: 12px;
       width: 90vw;
       max-width: 1200px;
+      margin-bottom: 40px;
     }
+
     .video-cell {
       display: flex;
       flex-direction: column;
@@ -51,9 +59,11 @@ html, body {
       box-shadow: 0 4px 12px rgba(0,0,0,0.7);
       transition: box-shadow 0.3s ease;
     }
+
     .video-cell:hover {
       box-shadow: 0 8px 20px rgba(255,255,255,0.15);
     }
+
     .video-info {
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -64,6 +74,7 @@ html, body {
       text-align: center;
       font-weight: 100;
     }
+
     .qr-code {
       width: 60px;
       height: 60px;
@@ -72,6 +83,7 @@ html, body {
       border-radius: 6px;
       box-shadow: 0 0 6px rgba(0,0,0,0.5);
     }
+
     video {
       width: 100%;
       height: 210px;
@@ -83,17 +95,20 @@ html, body {
       box-shadow: 0 0 8px rgba(0,0,0,0.6);
       transition: transform 0.3s ease;
     }
+
     video:hover {
       transform: scale(1.03);
       box-shadow: 0 0 16px rgba(255,255,255,0.25);
     }
+
     video::-webkit-media-controls {
       display: none !important;
     }
   </style>
 </head>
 <body>
-  <h1 class="page-title">neurosonic</h1>
+  <h1 class="page-title">NEUROSONIC</h1>
+
   <div class="video-grid">
     <div class="video-cell">
       <div class="video-info">Martin Panitz</div>
@@ -112,7 +127,6 @@ html, body {
     </div>
   </div>
 
-  <!-- Include QRCode.js locally -->
   <script src="qrcode.min.js"></script>
   <script>
     const qrcodes = [
@@ -132,7 +146,6 @@ html, body {
       });
     });
 
-    // Video playback controls (pause others when one plays)
     const videos = document.querySelectorAll('video');
     videos.forEach((video, idx) => {
       video.addEventListener('play', () => {
