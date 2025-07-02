@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Museum Video Grid with QR Codes</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      background: black;
+      height: 100%; width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 100;
+      color: #eee;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 370px;
+      gap: 12px;
+      width: 90vw;
+      max-width: 1200px;
+    }
+    .video-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #111;
+      border-radius: 10px;
+      padding: 12px 8px 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+      transition: box-shadow 0.3s ease;
+    }
+    .video-cell:hover {
+      box-shadow: 0 8px 20px rgba(255,255,255,0.15);
+    }
+    .video-info {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #ddd;
+      user-select: none;
+      margin-bottom: 8px;
+      text-align: center;
+      font-weight: 100;
+    }
+    .qr-code {
+      width: 60px;
+      height: 60px;
+      margin-top: 8px;
+      background: black;
+      border-radius: 6px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.5);
+    }
+    video {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      background: black;
+      cursor: pointer;
+      border-radius: 8px;
+      outline: none;
+      box-shadow: 0 0 8px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+    video:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 16px rgba(255,255,255,0.25);
+    }
+    video::-webkit-media-controls {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-grid">
+    <div class="video-cell">
+      <div class="video-info">ARTIST ONE — SONG TITLE ONE</div>
+      <video src="videos/output.mp4" controls></video>
+      <div id="qrcode1" class="qr-code"></div>
+    </div>
+    <div class="video-cell">
+      <div class="video-info">ARTIST TWO — SONG TITLE TWO</div>
+      <video src="videos/output2.mp4" controls></video>
+      <div id="qrcode2" class="qr-code"></div>
+    </div>
+    <div class="video-cell">
+      <div class="video-info">ARTIST THREE — SONG TITLE THREE</div>
+      <video src="videos/hyrogenpart1_dvd.mp4" controls></video>
+      <div id="qrcode3" class="qr-code"></div>
+    </div>
+  </div>
+
+  <!-- Include QRCode.js locally -->
+  <script src="qrcode.min.js"></script>
+  <script>
+    const qrcodes = [
+      { id: "qrcode1", url: "https://example.com/song1" },
+      { id: "qrcode2", url: "https://example.com/song2" },
+      { id: "qrcode3", url: "https://example.com/song3" }
+    ];
+
+    qrcodes.forEach(({id, url}) => {
+      new QRCode(document.getElementById(id), {
+        text: url,
+        width: 60,
+        height: 60,
+        colorDark: "#FFFFFF",
+        colorLight: "#000000",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    });
+
+    // Video playback controls (pause others when one plays)
+    const videos = document.querySelectorAll('video');
+    videos.forEach((video, idx) => {
+      video.addEventListener('play', () => {
+        videos.forEach((v, i) => {
+          if (i !== idx) v.pause();
+        });
+      });
+      video.addEventListener('click', () => {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
