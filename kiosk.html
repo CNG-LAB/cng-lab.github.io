@@ -5,17 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Museum Video Grid with QR Codes</title>
   <style>
-    html, body {
-      margin: 0; padding: 0;
-      background: black;
-      height: 100%; width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 100;
-      color: #eee;
-    }
+    @font-face {
+  font-family: 'Avenir';
+  src: local('Avenir'), local('Avenir Heavy'), local('Avenir-Heavy');
+  font-weight: 900;
+}
+
+html, body {
+  margin: 0; padding: 0;
+  background: black;
+  height: 100%; width: 100%;
+  font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 100;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 900; /* Heavy */
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  margin: 40px 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
     .video-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -76,19 +93,20 @@
   </style>
 </head>
 <body>
+  <h1 class="page-title">neurosonic</h1>
   <div class="video-grid">
     <div class="video-cell">
-      <div class="video-info">ARTIST ONE — SONG TITLE ONE</div>
-      <video src="videos/output.mp4" controls></video>
+      <div class="video-info">Martin Panitz</div>
+      <video src="videos/output_small.mp4" controls></video>
       <div id="qrcode1" class="qr-code"></div>
     </div>
     <div class="video-cell">
-      <div class="video-info">ARTIST TWO — SONG TITLE TWO</div>
+      <div class="video-info">Martin Panitz</div>
       <video src="videos/output2.mp4" controls></video>
       <div id="qrcode2" class="qr-code"></div>
     </div>
     <div class="video-cell">
-      <div class="video-info">ARTIST THREE — SONG TITLE THREE</div>
+      <div class="video-info">Natural Philosophers with attitude</div>
       <video src="videos/hyrogenpart1_dvd.mp4" controls></video>
       <div id="qrcode3" class="qr-code"></div>
     </div>
