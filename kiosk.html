@@ -42,67 +42,42 @@
     .video-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 370px;
       gap: 12px;
       width: 90vw;
       max-width: 1200px;
-      margin-bottom: 40px;
-    }
-
-    .video-cell {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: #111;
-      border-radius: 10px;
-      padding: 12px 8px 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .video-cell:hover {
-      box-shadow: 0 8px 20px rgba(255,255,255,0.15);
-    }
-
-    .video-info {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: #ddd;
-      user-select: none;
-      margin-bottom: 8px;
-      text-align: center;
-      font-weight: 100;
-    }
-
-    .qr-code {
-      width: 60px;
-      height: 60px;
-      margin-top: 8px;
-      background: black;
-      border-radius: 6px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.5);
     }
 
     video {
       width: 100%;
-      height: 210px;
+      height: 370px;
       object-fit: cover;
       background: black;
       cursor: pointer;
       border-radius: 8px;
       outline: none;
-      box-shadow: 0 0 8px rgba(0,0,0,0.6);
       transition: transform 0.3s ease;
     }
 
     video:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 16px rgba(255,255,255,0.25);
+      transform: scale(1.01);
     }
 
     video::-webkit-media-controls {
       display: none !important;
+    }
+
+    .artist-labels {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      text-align: right;
+      font-size: 0.9rem;
+      font-weight: 100;
+      color: #ccc;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: 'Avenir', 'Helvetica Neue', sans-serif;
     }
   </style>
 </head>
@@ -110,42 +85,18 @@
   <h1 class="page-title">NEUROSONIC</h1>
 
   <div class="video-grid">
-    <div class="video-cell">
-      <div class="video-info">Martin Panitz</div>
-      <video src="videos/output_small.mp4" controls></video>
-      <div id="qrcode1" class="qr-code"></div>
-    </div>
-    <div class="video-cell">
-      <div class="video-info">Martin Panitz</div>
-      <video src="videos/output2.mp4" controls></video>
-      <div id="qrcode2" class="qr-code"></div>
-    </div>
-    <div class="video-cell">
-      <div class="video-info">Natural Philosophers with attitude</div>
-      <video src="videos/hyrogenpart1_dvd.mp4" controls></video>
-      <div id="qrcode3" class="qr-code"></div>
-    </div>
+    <video src="videos/output_small.mp4" controls></video>
+    <video src="videos/output2.mp4" controls></video>
+    <video src="videos/hyrogenpart1_dvd.mp4" controls></video>
   </div>
 
-  <script src="qrcode.min.js"></script>
+  <div class="artist-labels">
+    Martin Panitz<br />
+    Martin Panitz<br />
+    Natural Philosophers with Attitude
+  </div>
+
   <script>
-    const qrcodes = [
-      { id: "qrcode1", url: "https://example.com/song1" },
-      { id: "qrcode2", url: "https://example.com/song2" },
-      { id: "qrcode3", url: "https://example.com/song3" }
-    ];
-
-    qrcodes.forEach(({id, url}) => {
-      new QRCode(document.getElementById(id), {
-        text: url,
-        width: 60,
-        height: 60,
-        colorDark: "#FFFFFF",
-        colorLight: "#000000",
-        correctLevel: QRCode.CorrectLevel.H
-      });
-    });
-
     const videos = document.querySelectorAll('video');
     videos.forEach((video, idx) => {
       video.addEventListener('play', () => {
