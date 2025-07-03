@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum – NEUROSONIC</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #ccc;
+      font-family: 'Avenir', 'Helvetica Neue', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: #ccc;
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #444;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Impressum</h1>
+
+    <p><strong>Angaben gemäß § 5 TMG:</strong><br />
+    Sofie Valk<br />
+    Stephanstrasse 1a<br />
+    04103 Leipzig<br />
+    Deutschland</p>
+
+    <p><strong>Kontakt:</strong><br />
+    E-Mail: <a href="mailto:valk@cbs.mpg.de">valk@cbs.mpg.de</a></p>
+
+    <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br />
+    Sofie Valk</p>
+
+    <hr />
+
+    <h2>Hinweis zur Musiknutzung</h2>
+    <p>
+      Einige der auf dieser Website verwendeten Musikstücke sind urheberrechtlich geschützt und bei der GEMA registriert.
+      Die Rechte liegen bei den jeweiligen Komponisten, insbesondere <em>[Martin Panitz]</em>.
+      Die Nutzung erfolgt mit ausdrücklicher Genehmigung des Rechteinhabers.
+    </p>
+
+    <p>
+      Die Website dient ausschließlich künstlerisch-wissenschaftlichen, nicht-kommerziellen Zwecken im Rahmen eines Forschungs- und Kunstprojekts.
+      Bei Rückfragen kontaktieren Sie uns bitte unter <a href="mailto:valk@cbs.mpg.de">valk@cbs.mpg.de</a>.
+    </p>
+  </div>
+</body>
+</html>
