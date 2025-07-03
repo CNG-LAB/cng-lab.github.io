@@ -36,7 +36,7 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-  	  align-items: center;
+      align-items: center;
       flex-direction: column;
       position: relative;
     }
@@ -101,6 +101,18 @@
       font-weight: 700;
       text-shadow: 0 0 8px #fff;
     }
+
+    /* Responsive layout for mobile */
+    @media (max-width: 600px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+      }
+
+      .video-grid video {
+        height: auto;
+      }
+    }
   </style>
 </head>
 
@@ -109,12 +121,12 @@
     <h1 class="page-title">NEUROSONIC</h1>
 
     <div class="video-grid">
-      <!-- 6 videos for 2 rows × 3 columns -->
       <video src="videos/output2_opt.mp4" controls></video>
       <video src="videos/hyrogenpart1_dvd.mp4" controls></video>
       <video src="videos/output_small.mp4" controls></video>
       <video src="videos/brainstat_orbit_opt.mp4" controls></video>
       <video src="videos/neumann_transmissions.mp4" controls></video>
+      <video src="videos/extra_video.mp4" controls></video> <!-- Added 6th video for 6 rows -->
     </div>
   </div>
 
@@ -133,6 +145,7 @@
       2: ['martin-panitz'],
       3: ['nufa'],
       4: ['julian-wolf'],
+      5: ['nufa']  // If you add a 6th video, add mapping here
     };
 
     const artists = document.querySelectorAll('.artist');
