@@ -16,115 +16,145 @@
     }
 
     .page-title {
-  font-family: 'Avenir', sans-serif;
-  font-weight: 900;
-  font-size: 3rem;
-  color: #fff;
-  text-align: center;
-  margin: 20px 0 30px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-body {
-  margin: 0;
-  padding: 0;
-  background: black;
-  color: #eee;
-  font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 100;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;   /* center vertically */
-  align-items: center;       /* center horizontally */
-  flex-direction: column;
-  position: relative;
-}
+      font-family: 'Avenir', sans-serif;
+      font-weight: 900;
+      font-size: 3rem;
+      color: #fff;
+      text-align: center;
+      margin: 20px 0 30px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
 
-.main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: #eee;
+      font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 100;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+  	  align-items: center;
+      flex-direction: column;
+      position: relative;
+    }
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
-  grid-template-rows: repeat(2, auto);   /* 2 rows */
-  gap: 12px;
-  width: 90vw;
-  max-width: 1200px;
-  justify-items: center;
-}
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-.video-grid video {
-  width: 100%;
-  height: 210px;
-  border-radius: 8px;
-  background: black;
-  box-shadow: 0 0 8px rgba(0,0,0,0.6);
-  cursor: pointer;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 12px;
+      width: 90vw;
+      max-width: 1200px;
+      justify-items: center;
+    }
 
-.video-grid video:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 16px rgba(255,255,255,0.25);
-}
+    .video-grid video {
+      width: 100%;
+      height: 210px;
+      border-radius: 8px;
+      background: black;
+      box-shadow: 0 0 8px rgba(0,0,0,0.6);
+      cursor: pointer;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
 
-.artist-labels {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  text-align: right;
-  font-size: 0.9rem;
-  font-weight: 100;
-  color: #ccc;
-  line-height: 1.5;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-family: 'Avenir', 'Helvetica Neue', sans-serif;
-  max-width: 200px;
-  user-select: none;
-}
+    .video-grid video:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 16px rgba(255,255,255,0.25);
+    }
+
+    .artist-labels {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      text-align: right;
+      font-size: 0.9rem;
+      font-weight: 100;
+      color: #666;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: 'Avenir', 'Helvetica Neue', sans-serif;
+      max-width: 200px;
+      user-select: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .artist-labels .artist {
+      cursor: default;
+      margin-top: 6px;
+    }
+
+    .artist-labels .artist.highlight {
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 0 0 8px #fff;
+    }
   </style>
 </head>
 
 <body>
-    
   <div class="main-content">
-  <h1 class="page-title">NEUROSONIC</h1>
+    <h1 class="page-title">NEUROSONIC</h1>
 
-  <div class="video-grid">
-    <!-- 6 videos for 2 rows × 3 columns -->
-    <video src="videos/output2_opt.mp4" controls></video>
-    <video src="videos/hyrogenpart1_dvd.mp4" controls></video>
-    <video src="videos/output_small.mp4" controls></video>
-    <video src="videos/brainstat_orbit_opt.mp4" controls></video>
-    <video src="videos/neumann_transmissions.mp4" controls></video>
+    <div class="video-grid">
+      <!-- 6 videos for 2 rows × 3 columns -->
+      <video src="videos/output2_opt.mp4" controls></video>
+      <video src="videos/hyrogenpart1_dvd.mp4" controls></video>
+      <video src="videos/output_small.mp4" controls></video>
+      <video src="videos/brainstat_orbit_opt.mp4" controls></video>
+      <video src="videos/neumann_transmissions.mp4" controls></video>
+    </div>
   </div>
-</div>
 
   <div class="artist-labels">
     In collaboration with: <br />
-    Martin Panitz<br />
-    Natural Philosophers with Attitude<br />
-    NUFA<br />
-    Julian-Wolf Neumann
+    <div class="artist" data-artist="martin-panitz">Martin Panitz</div>
+    <div class="artist" data-artist="natural-philosophy">Natural-philosophy with Attitude</div>
+    <div class="artist" data-artist="nufa">NUFA</div>
+    <div class="artist" data-artist="julian-wolf">Julian-Wolf Neumann</div>
   </div>
 
   <script>
-    document.querySelectorAll('video').forEach(video => {
+    const artistMap = {
+      0: ['martin-panitz'],
+      1: ['natural-philosophy'],
+      2: ['martin-panitz'],
+      3: ['nufa'],
+      4: ['julian-wolf'],
+    };
+
+    const artists = document.querySelectorAll('.artist');
+    const videos = document.querySelectorAll('.video-grid video');
+
+    function clearHighlights() {
+      artists.forEach(a => a.classList.remove('highlight'));
+    }
+
+    videos.forEach((video, idx) => {
       video.addEventListener('play', () => {
-        if (video.requestFullscreen) {
-          video.requestFullscreen();
-        } else if (video.webkitRequestFullscreen) {
-          video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) {
-          video.msRequestFullscreen();
-        }
+        clearHighlights();
+        const artistKeys = artistMap[idx] || [];
+        artistKeys.forEach(key => {
+          const artistElem = document.querySelector(`.artist[data-artist="${key}"]`);
+          if (artistElem) artistElem.classList.add('highlight');
+        });
       });
+
+      video.addEventListener('pause', clearHighlights);
+      video.addEventListener('ended', clearHighlights);
     });
   </script>
 </body>
+</html>
