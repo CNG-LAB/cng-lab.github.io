@@ -15,6 +15,36 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: black;
+      color: #eee;
+      font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 100;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 40px; /* gives room above footer */
+    }
+
     .page-title {
       font-family: 'Avenir', sans-serif;
       font-weight: 900;
@@ -24,28 +54,6 @@
       margin: 20px 0 30px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background: black;
-      color: #eee;
-      font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 100;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
     .video-grid {
@@ -76,7 +84,7 @@
 
     .artist-labels {
       position: fixed;
-      bottom: 20px;
+      bottom: 60px;
       right: 20px;
       text-align: right;
       font-size: 0.9rem;
@@ -102,6 +110,17 @@
       text-shadow: 0 0 8px #fff;
     }
 
+    footer {
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footerLinks a {
+      color: #ccc;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+
     /* Responsive layout for mobile */
     @media (max-width: 600px) {
       .video-grid {
@@ -112,21 +131,34 @@
       .video-grid video {
         height: auto;
       }
+
+      .artist-labels {
+        font-size: 0.75rem;
+        bottom: 80px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="main-content">
-    <h1 class="page-title">NEUROSONIC</h1>
+  <div class="page-wrapper">
+    <div class="main-content">
+      <h1 class="page-title">NEUROSONIC</h1>
 
-    <div class="video-grid">
-      <video src="videos/output2_opt.mp4" controls></video>
-      <video src="videos/hyrogenpart1_dvd.mp4" controls></video>
-      <video src="videos/output_small.mp4" controls></video>
-      <video src="videos/brainstat_orbit_opt.mp4" controls></video>
-      <video src="videos/neumann_transmissions.mp4" controls></video>
+      <div class="video-grid">
+        <video src="videos/output2_opt.mp4" controls></video>
+        <video src="videos/hyrogenpart1_dvd.mp4" controls></video>
+        <video src="videos/output_small.mp4" controls></video>
+        <video src="videos/brainstat_orbit_opt.mp4" controls></video>
+        <video src="videos/neumann_transmissions.mp4" controls></video>
+      </div>
     </div>
+
+    <footer>
+      <div class="footerLinks">
+        <a href="impressum_kiosk.html">Impressum</a>
+      </div>
+    </footer>
   </div>
 
   <div class="artist-labels">
@@ -144,7 +176,6 @@
       2: ['martin-panitz'],
       3: ['nufa'],
       4: ['julian-wolf'],
-      5: ['nufa']  // If you add a 6th video, add mapping here
     };
 
     const artists = document.querySelectorAll('.artist');
@@ -169,16 +200,4 @@
     });
   </script>
 </body>
-
-<footer>
-      <div class="copyright" align="center" style="color: #ccc; font-size: 0.85rem">
-        <p>© 2025 Sofie Valk. All rights reserved.</p>
-       
-        <a class="copyright" href="mailto:valk@cbs.mpg.de">contact</a>
-      </div>
-      <div class="footerLinks" align="center">
-        <a href="impressum_kiosk.html" style="color: #ccc; font-size: 0.85rem;">Impressum</a>
-      </div>
-      </p>
-</footer>
 </html>
