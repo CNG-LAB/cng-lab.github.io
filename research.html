@@ -53,44 +53,165 @@
 <section class="some-related-articles">
   </br>
   </br>
-  <h1>Our questions & how and why we try to answer them</h1>
-  <p align="left"> Using advanced brain imaging techniques and computational models, we investigate brain-environment interactions to explore how the brain balances stability and plasticity throughout the lifespan. Given the extended period of human neurodevelopment and our reliance on social relationships for nurture and learning, we recognize the crucial role social factors play in shaping brain structure and cognitive function.
-    To address these questions, we draw on a diverse range of data, including MRI-based neuroanatomy, histological data, genomics, geocoded data, task-based assessments, and self-reports. This broad approach clarifies the complex interplay between neurobiology and its social context.   
-    We value open and transparent science, making all our code available on GitHub and publishing our papers with open access. Our lab fosters a culture of inquiry, collaboration, and mutual respect, where we learn and grow together. Below, we outline our key research areas and goals:
-  </br></br></br>
-  </p>
-  <center>
-  <div class="row">
-      <img src="assets/web1.png" alt="Snow" style="width:100%">
-          <h2 align="left"> Principles of brain organisation </h2> <p align="left">
-            To understand how brain structure both constrains and enables function, we investigate its neurobiological, genetic, and evolutionary basis. Our previous research has shown that brain structure is genetically organized along large-scale axes (Valk et al., 2020, Science Advances) and elucidated the layer-specific organization of the human brain (Saberi et al., 2023, PLOS Biology). In addition, we have identified heritable intrinsic microstructural and functional asymmetries in brain regions involved in language and attention (Wan et al., 2022, eLife; Wan et al., 2024). </p>
-  <div class="row">
-      <img src="assets/web2.png" alt="Forest" style="width:100%">
-          <h2 align="left"> Lifespan and plasticity </h2> <p align="left">
-          Our second area of research focuses on how biological factors - including genetics, hormones, and immune responses - influence brain structure and function across the lifespan. Stress hormones such as cortisol can influence brain function, and genetic predispositions shape neural development in interaction with the social environment. For example, our recent studies have demonstrated sex differences in brain structure and function, highlighting the importance of considering sex-specific factors in brain research (Küchenhoff et al., 2024, Nature Communications; Serio et al., 2024, Nature Communications).
-          </p>
+  <h1>Our questions and how and why we try to answer them</h1>
+<p align="left">
+Using advanced brain imaging techniques and computational models, we try to understand how the brain balances structural and functional stability and plasticity across the lifespan. At the core of our work is a focus on how the physical architecture of the brain shapes its many functions—and how these functions feed back to reshape that architecture over time. Given the extended period of human neurodevelopment and our reliance on social relationships for learning and growth, we pay special attention to the role social factors play in shaping brain structure and cognitive function.
+<br><br>
+To tackle these questions, we draw on diverse data sources, including MRI-based neuroanatomy, histology, genomics, geocoded information, task-based assessments, and self-reports. This broad approach helps us unravel the complex interplay between brain structure and function, genes and (social) environment, over time.
+<br><br>
+We believe in open and transparent science, sharing all our code on GitHub and publishing our findings with open access. Our lab culture values inquiry, collaboration, and mutual respect, where we learn and grow together. Below, we outline our key research areas and goals:
+</p>
+
+<style>
+  .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
+    margin-bottom: 3em;
+  }
+  .row img {
+    width: 35%;
+    max-width: 280px;
+    border-radius: 8px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .row img:hover {
+    transform: scale(1.05);
+  }
+  .row div.text {
+    width: 65%;
+  }
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+    .row img, .row div.text {
+      width: 100%;
+    }
+  }
+
+  /* Modal styles */
+  #imgModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 5vh;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 90vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.85);
+  }
+  #imgModal img {
+    margin: auto;
+    display: block;
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 10px;
+  }
+  #imgModal .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
+
+<div class="row">
+  <div class="text">
+    <h2>Principles of brain organisation</h2>
+    <p>
+      To understand how brain structure both constrains and enables function, we investigate its neurobiological, genetic, and evolutionary basis. Our previous research showed that brain structure is genetically organized along large-scale axes (Valk et al., 2020) and clarified the layer-specific organization of the human brain (Saberi et al., 2023). We also identified heritable intrinsic microstructural and functional asymmetries in regions involved in language and attention (Wan et al., 2022, eLife; Wan et al., 2024).
+    </p>
   </div>
-  <div class="row">
-      <img src="assets/web3.png" alt="Forest" style="width:100%">
-          <h2 align="left"> Social neuroscience | Individual difference </h2> <p align="left">
-          While genetic factors shape brain structure, environmental influences play a critical role in shaping brain function throughout the lifespan. We believe that the social environment is particularly influential because of the extended maturation of the cerebral cortex and the effects of sociocultural learning. In previous work, I demonstrated that changes in social-environmental demands, such as through mental training, can alter cortical structure and function while improving social cognitive abilities (Valk, 2017, Science Advances; Valk, 2023, eLife). More recently, we showed that microstructural reconfiguration in the brain is associated with resilient adaptation during adolescence, suggesting a complex interplay between neurobiological factors, internal functional models, and adaptation to adverse experiences (Hettwer et al., 2024, Nature Communications). Importantly, the brain is not a passive recipient of the social environment, but actively produces social cognition to navigate interactions with others. In recent findings, we identified the cerebellar crus I/II as playing a central role in the development of social cognitive functions in early childhood (Manoli et al., bioRxiv).
-          </p>
+  <img src="assets/new_web1.tif" alt="Brain organization illustration" class="clickable-img">
+</div>
+
+<div class="row">
+  <div class="text">
+    <h2>Biological factors</h2>
+    <p>
+      Our second research focus is how biological factors, such as genetics, hormones, and immune responses, influence brain structure and function throughout life. For example, stress hormones like cortisol affect brain function, while genetic predispositions interact with the social environment to shape neural development. Our recent studies revealed sex differences in brain structure and function, emphasizing the importance of considering sex-specific factors in brain research (Küchenhoff et al., 2024; Serio et al., 2024). Also,
+      we have investigated the relationship between brain organization and metabolic markers (Wan, bioRxiv) and genetic variation (Wan, bioRxiv).
+    </p>
   </div>
-    <div class="row">
-      <img src="assets/gradientwg.png" alt="Snow" style="width:60%">
-          <h2 align="left"> Translation and Global Neuroscience </h2>
-          <p align="left"> We are integrating our models of brain organization with maps of disorder impact to further understand how brain structure and function may provide biological axes in which mental disorders and conditions are embedded. Such insights provide insights into the nosology of mental health and disease.</p>
-    </div>
-    <div class="row">
-    </br>
-    </br>
-        <img src="assets/cubnm.png" alt="Snow" style="width:100%">
-    </br>
-    </br>
-            <h2 align="left"> Tools and community </h2>
-            <p align="left"> We have developed CUBNM, led by Amin. cuBNM toolbox uses GPUs to efficiently run simulations of brain network models consisting of nodes (neural mass models) which are connected through a connectome, and fit them to empirical neuroimaging data through integrated optimization algorithms.
-            Together with the mica-lab we have developed brainspace, a statistical and decoding toolbox in matlab and python. By co-developing various toolboxes we hope to contribute to robust and integrative neuroscience. </p>
+  <img src="assets/web2_new.tif" alt="Brain plasticity illustration" class="clickable-img">
+</div>
+
+<div class="row">
+  <div class="text">
+    <h2>The living brain</h2>
+    <p>
+      While genetics shape brain structure, environmental factors play a crucial role in brain function across the lifespan. Because of the extended maturation of the cerebral cortex and the effects of sociocultural learning, we focus especially on the social environment. Previous work demonstrated that changes in social demands, such as through mental training, can alter cortical structure and function, improving social cognitive abilities (Valk, 2017; Valk, 2023). More recently, we showed that microstructural brain changes support resilient adaptation during adolescence, reflecting a complex interplay between neurobiology, internal models, and responses to adversity (Hettwer et al., 2024). Importantly, the brain is not a passive recipient of social input—it actively produces social cognition to navigate interactions. Recent findings identified the cerebellar crus I/II as central to developing social cognitive functions in early childhood (Manoli et al., 2025).
+    </p>
   </div>
+  <img src="assets/web3_new.tif" alt="Social neuroscience illustration" class="clickable-img">
+</div>
+
+<div class="row">
+  <div class="text">
+    <h2>Translation and global neuroscience</h2>
+    <p>
+      We integrate our models of brain organization with maps of disorder impact to better understand how brain structure and function form biological axes in which mental disorders are embedded. These insights help use to understand alterations in brain structure and function in brain disorders and conditions, predict how they may progress, but also investigate what kind of interventions may help.
+    </p>
+  </div>
+  <img src="assets/gradientwg.png" alt="Brain disorder impact gradient" class="clickable-img">
+</div>
+
+<div class="row">
+  <div class="text">
+    <h2>Tools and community</h2>
+    <p>
+      Led by Amin, we developed CUBNM, a toolbox that uses GPUs to efficiently simulate brain network models based on neural mass models connected through a connectome, fitting them to empirical neuroimaging data via integrated optimization algorithms. In collaboration with the mica-lab, we co-developed brainspace, a statistical and decoding toolbox in MATLAB and Python. By building and sharing these tools, we aim to contribute to robust and integrative neuroscience.
+    </p>
+  </div>
+  <img src="assets/cubnm_new.tif" alt="CUBNM toolbox" class="clickable-img">
+</div>
+
+<!-- Modal for image zoom -->
+<div id="imgModal">
+  <span class="close">&times;</span>
+  <img id="modalImg" src="" alt="Enlarged image">
+</div>
+
+<script>
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('modalImg');
+  const closeBtn = modal.querySelector('.close');
+  const images = document.querySelectorAll('.clickable-img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  });
+
+  // Also close modal on click outside image
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modalImg.src = '';
+    }
+  });
+</script>
+
+
+
+
+
   </center>
   </br>
   </br>
