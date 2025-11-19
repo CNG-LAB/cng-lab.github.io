@@ -2,83 +2,364 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>cng</title>
+<title>Cognitive Neurogenetics Lab</title>
 <meta name="description" content="Cognitive neurogenetics">
 <meta name="author" content="valk@cbs.mpg.de">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->  
-<link rel="stylesheet" href="assets/base.css">
-<link rel="stylesheet" href="fixed-navigation-bar.css">
 <link rel="shortcut icon" href="assets/pics/favi.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* Fixed Navigation Bar */
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.menu {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-items {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu-items li {
+  display: inline-block;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 15px;
+}
+
+.menu-items a:hover {
+  color: #666;
+}
+
+.show, .hide {
+  display: none;
+}
+
+/* Hero Section with Background Image */
+.hero-content {
+  position: relative;
+  background: #ffffff url(assets/lab_gif2b.gif) no-repeat center fixed;
+  background-size: cover;
+  min-height: 900px;
+  margin-top: 60px;
+}
+
+/* Main Content */
+.main-content {
+  padding: 40px 20px 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #222;
+  font-weight: 300;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #222;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 300;
+}
+
+p {
+  margin-bottom: 25px;
+  font-size: 1.05em;
+  color: #444;
+  line-height: 1.8;
+}
+
+strong {
+  font-weight: 500;
+  color: #222;
+}
+
+em {
+  font-style: italic;
+}
+
+/* Vision Section */
+#vision {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+/* Research Image Link */
+.research-link {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.research-link img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-link img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+footer {
+  background-color: #f5f5f5;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 80px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.copyright {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.copyright p {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.copyright a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.copyright a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.footerLinks a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1024px) {
+  .hero-content {
+    min-height: 700px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* Mobile Menu */
+  .menu {
+    position: relative;
+    justify-content: flex-start;
+  }
+  
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px 0;
+    gap: 0;
+  }
+  
+  .menu-items li {
+    text-align: center;
+    padding: 12px 0;
+  }
+  
+  .show, .hide {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .show::before {
+    content: "☰";
+  }
+  
+  .hide::before {
+    content: "✕";
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  #menu:target .show {
+    display: none;
+  }
+  
+  #menu:target .hide,
+  #menu:target .menu-items {
+    display: flex;
+  }
+  
+  .hero-content {
+    min-height: 500px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  #vision {
+    padding: 30px 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* Switch to mobile GIF */
+  .hero-content {
+    background: #ffffff url(assets/for_alex2.gif) no-repeat top center fixed;
+    background-size: initial;
+    min-height: 300px;
+  }
+  
+  .main-content {
+    padding: 30px 15px;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  p {
+    font-size: 1em;
+  }
+  
+  #vision {
+    padding: 25px 20px;
+  }
+}
+</style>
 </head>
 <body>
 
-    <nav class="fixed-nav-bar">
-      <div id="menu" class="menu" align="center">
-        <!-- Example responsive navigation menu  -->
-        <a class="show" href="#menu">menu</a><a class="hide" href="#hidemenu">menu</a>
-        <ul class="menu-items">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="#about">about</a></li>
-          <li><a href="research.html">research</a></li>
-          <li><a href="people.html">people</a></li>
-          <li><a href="philosophy.html">philosophy</a></li>
-          <li><a href="publications.html">publications</a></li>
-          <li><a href="gradient.html">enigma &#x1f308; </a></li>
-      </ul>
-      </div>
-    </nav>
+<nav class="fixed-nav-bar">
+  <div id="menu" class="menu">
+    <a class="show" href="#menu"></a>
+    <a class="hide" href="#hidemenu"></a>
+    <ul class="menu-items">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="research.html">RESEARCH</a></li>
+      <li><a href="people.html">PEOPLE</a></li>
+      <li><a href="philosophy.html">PHILOSOPHY</a></li>
+      <li><a href="publications.html">PUBLICATIONS</a></li>
+      <li><a href="gradient.html">ENIGMA 🌈</a></li>
+    </ul>
+  </div>
+</nav>
 
-<section class="content">
+<!-- Hero Section with Background GIF -->
+<section class="hero-content">
   <div class="description">
     <h3></h3>
     <p class="summary2"></p>
   </div>
 </section>
 
-<section class="some-related-articles" id="about">
-  </br>
-  </br>
-<h1>What do we mean with ‘cognitive neurogenetics’? </h1>
-<p>
-Understanding how brain structure supports cognitive function requires recognizing the brain as fundamentally <span class="highlight">biosocial</span>, its architecture emerging from continuous interactions between genetic factors and social-environmental experience. We investigate how brain structure both constrains and enables cognitive functions, and how this relationship operates bidirectionally over time.
-</p>
-<p>
-This relationship unfolds across multiple scales. At the micro/mesoscale, cortical laminar organization, myeloarchitecture, and cellular composition provide the substrate for local computation. At the macroscale, organizational gradients and network configurations enable integrated processes including perception, memory, decision-making, and social cognition. Crucially, this architecture exhibits remarkable plasticity throughout the lifespan, shaped by the extended period of human neurodevelopment and our reliance on social relationships for learning and adaptation. We use computational tools to desipher the relationship between genes and environment, structure and function over the lifespan in health and disease. 
-</p>
-      <p align="left">
-      We are based at the <a href="http://www.cbs.mpg.de">Max Planck Institute for Human Cognitive and Brain Sciences</a> in Leipzig and  <a href="https://www.fz-juelich.de/inm/inm-7/EN/Home/home_node.html">INM-7, Forschungszentrum Jülich</a> in Jülich, both in Germany. We are part of <a href="https://bigbrainproject.org/">Helmholtz International Bigbrain analytics & learning laboratory</a> set up by Forschungszentrum Jülich and Montreal Neurological Institute, Montreal, Canada.
-      </p>
-  </br>
-</section>
-
-
-<section class="some-related-articles" id="news">
-    <center>
-          <p>
-           <a href="research.html">
-           <img src="./assets/research3.png" alt="gradients" style="max-width: 100%;max-height: 100%">
-           </a>
-          </p>
-	</center>
-    </br>
-    </br>
-</section>
-</body>
-</html>
+<!-- Main Content -->
+<div class="main-content">
+  <div class="container">
+    <section id="about">
+      <h1>Cognitive Neurogenetics Lab</h1>
+      
+      <section id="vision">
+        <p>How does brain architecture enable us to think, remember, and connect with others? We study this question by treating the brain as fundamentally <strong>biosocial</strong>, an organ whose organization emerges from continuous interactions between genetic factors and social-environmental experience across the lifespan.</p>
+        
+        <p>Think of it like having a compass for the brain. To understand cognition, we need to know not just where brain regions are, but <em>why</em> they're organized the way they are. This requires bridging scales: from cellular organization to network dynamics, from individual development to evolutionary time, from molecular mechanisms to lived social experience. Our work integrates ultra-high-resolution neuroimaging, computational modeling, and global population neuroscience to reveal how brain architecture supports cognitive function in health and disease.</p>
+      </section>
+      
+      <div class="research-link">
+        <a href="research.html">
+          <img src="./assets/research3.png" alt="Research Overview - Brain Organization Gradients">
+        </a>
+      </div>
+    </section>
+  </div>
+</div>
 
 <footer>
-      <div class="copyright" align="center">
-        <p>© 2025 Dr. Sofie Valk. All rights reserved.</p>
-       
-        <a class="copyright" href="mailto:valk@cbs.mpg.de">contact</a>
-      </div>
-      <div class="footerLinks" align="center">
-        <a href="impressum.html">Impressum</a>
-      </div>
-      </p>
+  <div class="copyright">
+    <p>© 2025 Dr. Sofie Valk. All rights reserved.</p>
+    <a href="mailto:valk@cbs.mpg.de">contact</a>
+  </div>
+  <div class="footerLinks">
+    <a href="impressum.html">Impressum</a>
+  </div>
 </footer>
 
-
-
+</body>
+</html>
