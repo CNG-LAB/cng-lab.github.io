@@ -109,6 +109,7 @@ h2 {
   margin-bottom: 30px;
   color: #222;
   font-weight: 300;
+  text-align: center;
 }
 
 h3 {
@@ -161,6 +162,74 @@ em {
   box-shadow: 0 6px 24px rgba(0,0,0,0.15);
 }
 
+/* Funders Section */
+#funders {
+  margin-top: 60px;
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+}
+
+#funders h2 {
+  margin-bottom: 40px;
+}
+
+.funders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 40px;
+}
+
+.funder-card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.funder-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.funder-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.funder-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.funder-card h3 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.funder-card p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 0;
+}
+
 /* Footer */
 footer {
   background-color: #f5f5f5;
@@ -205,6 +274,10 @@ footer {
 @media only screen and (max-width: 1024px) {
   .hero-content {
     min-height: 700px;
+  }
+  
+  .funders-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -276,6 +349,15 @@ footer {
   #vision {
     padding: 30px 25px;
   }
+  
+  .funders-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+  
+  #funders {
+    padding: 40px 0;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -294,11 +376,19 @@ footer {
     font-size: 1.8em;
   }
   
+  h2 {
+    font-size: 1.6em;
+  }
+  
   p {
     font-size: 1em;
   }
   
   #vision {
+    padding: 25px 20px;
+  }
+  
+  .funder-card {
     padding: 25px 20px;
   }
 }
@@ -337,7 +427,7 @@ footer {
       <h1>Cognitive Neurogenetics Lab</h1>
       
       <section id="vision">
-        <p>How does brain architecture enable us to think, remember, and connect with others? We study this question by treating the brain as fundamentally <strong>biosocial</strong>, an organ whose organization emerges from continuous interactions between genetic factors and social-environmental experience across the lifespan.</p>
+        <p>How does brain architecture enable us to think, remember, and connect with others? We study this question by treating the brain as fundamentally <strong>biosocial</strong>—an organ whose organization emerges from continuous interactions between genetic factors and social-environmental experience across the lifespan.</p>
         
         <p>Think of it like having a compass for the brain. To understand cognition, we need to know not just where brain regions are, but <em>why</em> they're organized the way they are. This requires bridging scales: from cellular organization to network dynamics, from individual development to evolutionary time, from molecular mechanisms to lived social experience. Our work integrates ultra-high-resolution neuroimaging, computational modeling, and global population neuroscience to reveal how brain architecture supports cognitive function in health and disease.</p>
       </section>
@@ -349,39 +439,53 @@ footer {
       </div>
     </section>
 
-     <section id="funders">
-            <h2>We are grateful to our funders</h2>            
-            <div class="method-list">
-                <div class="method-item">
-                    <strong>Max Planck Society</strong>
-                    The Lise Meitner program supporting the core of our team in Leipzig.
-                </div>
-                
-                <div class="method-item">
-                    <strong>Helmholz, FZJ</strong>
-                    Supporting BigBrain/Hiball collaboration and the core of our team in Jülich.
-                </div>
-                
-                <div class="method-item">
-                    <strong>Jacobs foundation</strong>
-                    Enabling us to investigate the impact of early life stress on brain development.
-                </div>
-                
-                <div class="method-item">
-                    <strong>Hector foundation</strong>
-                    Supporting our research in social cognition beyond the cortex.
-                </div>
-                
-                <div class="method-item">
-                    <strong>ERC starting grant</strong>
-                    Supporting our work on the interplay between social cognition and social environment upon the brain.
-                </div>
-            </div>
-        </section>
+    <section id="funders">
+      <h2>We Are Grateful to Our Funders</h2>
+      
+      <div class="funders-grid">
+        <div class="funder-card">
+          <div class="funder-logo">
+            <img src="assets/logos/mps_logo.png" alt="Max Planck Society">
+          </div>
+          <h3>Max Planck Society</h3>
+          <p>The Lise Meitner program supporting the core of our team in Leipzig</p>
+        </div>
+        
+        <div class="funder-card">
+          <div class="funder-logo">
+            <img src="assets/logos/helmholtz_logo.png" alt="Helmholtz Association">
+          </div>
+          <h3>Helmholtz, FZJ</h3>
+          <p>Supporting BigBrain/HIBALL collaboration and the core of our team in Jülich</p>
+        </div>
+        
+        <div class="funder-card">
+          <div class="funder-logo">
+            <img src="assets/logos/jacobs_logo.png" alt="Jacobs Foundation">
+          </div>
+          <h3>Jacobs Foundation</h3>
+          <p>Enabling us to investigate the impact of early life stress on brain development</p>
+        </div>
+        
+        <div class="funder-card">
+          <div class="funder-logo">
+            <img src="assets/logos/hector_logo.png" alt="Hector Foundation">
+          </div>
+          <h3>Hector Foundation</h3>
+          <p>Supporting our research in social cognition beyond the cortex</p>
+        </div>
+        
+        <div class="funder-card">
+          <div class="funder-logo">
+            <img src="assets/logos/erc_logo.png" alt="ERC Starting Grant">
+          </div>
+          <h3>ERC Starting Grant</h3>
+          <p>Supporting our work on the interplay between social cognition and social environment upon the brain</p>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
-
- 
 
 <footer>
   <div class="copyright">
