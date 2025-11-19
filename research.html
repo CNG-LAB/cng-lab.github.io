@@ -2,183 +2,634 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>cng</title>
+<title>cng - Research</title>
 <meta name="description" content="Cognitive neurogenetics">
 <meta name="author" content="valk@cbs.mpg.de">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
-<link rel="stylesheet" href="assets/base.css">
-<link rel="stylesheet" href="fixed-navigation-bar.css">
-<link rel="shortcut icon" href="assets/pics/favi.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* Fixed Navigation Bar */
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.menu {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-items {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu-items li {
+  display: inline-block;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 15px;
+}
+
+.menu-items a:hover {
+  color: #666;
+}
+
+.show, .hide {
+  display: none;
+}
+
+/* Main Content */
+main {
+  margin-top: 80px;
+  padding: 40px 20px 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Image */
+.hero-image {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 80px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #222;
+  border-bottom: 3px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+h4 {
+  font-size: 1.2em;
+  margin: 25px 0 15px;
+  color: #444;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 1.05em;
+  color: #444;
+}
+
+/* Framework Section */
+#framework {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 60px;
+}
+
+/* Pillar Layout - Text on Left, Image on Right */
+.pillar {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: start;
+}
+
+.pillar-content {
+  grid-column: 1;
+}
+
+.pillar-image {
+  grid-column: 2;
+  grid-row: 1 / span 10;
+  position: sticky;
+  top: 100px;
+}
+
+.pillar-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-image img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+.pillar h3 {
+  grid-column: 1 / -1;
+  margin-bottom: 25px;
+}
+
+/* Key Questions Box */
+.key-questions {
+  background-color: #f5f5f5;
+  padding: 25px;
+  border-radius: 8px;
+  margin: 25px 0;
+  border-left: 4px solid #666;
+}
+
+.key-questions h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.key-questions ul {
+  list-style-position: outside;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.key-questions li {
+  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Publication Links */
+.pub-link {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.pub-link:hover {
+  color: #004499;
+  text-decoration: underline;
+}
+
+/* Modal for Image Zoom */
+#imgModal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  padding: 20px;
+}
+
+#imgModal img {
+  margin: auto;
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#imgModal .close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 10001;
+}
+
+#imgModal .close:hover {
+  color: #ccc;
+}
+
+/* Footer */
+footer {
+  background-color: #f5f5f5;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 80px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.copyright {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.copyright a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.copyright a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.footerLinks a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  color: #333;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1024px) {
+  .pillar {
+    grid-template-columns: 1fr 300px;
+    gap: 30px;
+  }
+  
+  .pillar-image {
+    top: 80px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* Mobile Menu */
+  .menu {
+    position: relative;
+    justify-content: flex-start;
+  }
+  
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px 0;
+    gap: 0;
+  }
+  
+  .menu-items li {
+    text-align: center;
+    padding: 12px 0;
+  }
+  
+  .show, .hide {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .show::before {
+    content: "☰";
+  }
+  
+  .hide::before {
+    content: "✕";
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  #menu:target .show {
+    display: none;
+  }
+  
+  #menu:target .hide,
+  #menu:target .menu-items {
+    display: flex;
+  }
+  
+  /* Pillar Layout - Stack on Mobile */
+  .pillar {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .pillar-image {
+    grid-column: 1;
+    grid-row: auto;
+    position: static;
+    margin-bottom: 20px;
+  }
+  
+  .pillar h3 {
+    grid-column: 1;
+  }
+  
+  h2 {
+    font-size: 1.6em;
+  }
+  
+  h3 {
+    font-size: 1.3em;
+  }
+  
+  #framework {
+    padding: 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 20px 15px 40px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.4em;
+  }
+  
+  .key-questions {
+    padding: 20px;
+  }
+  
+  #imgModal .close {
+    top: 15px;
+    right: 25px;
+    font-size: 40px;
+  }
+}
+</style>
 </head>
 <body>
 
-    <nav class="fixed-nav-bar">
-      <div id="menu" class="menu" align="center">
-        <!-- Example responsive navigation menu  -->
-        <a class="show" href="#menu">menu</a><a class="hide" href="#hidemenu">menu</a>
-        <ul class="menu-items">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="#about">about</a></li>
-          <li><a href="research.html">research</a></li>
-          <li><a href="people.html">people</a></li>
-          <li><a href="philosophy.html">philosophy</a></li>
-          <li><a href="publications.html">publications</a></li>
-          <li><a href="gradient.html">enigma &#x1f308; </a></li>
-      </ul>
-      </div>
-    </nav>
+<nav class="fixed-nav-bar">
+  <div id="menu" class="menu">
+    <a class="show" href="#menu"></a>
+    <a class="hide" href="#hidemenu"></a>
+    <ul class="menu-items">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="research.html">RESEARCH</a></li>
+      <li><a href="people.html">PEOPLE</a></li>
+      <li><a href="philosophy.html">PHILOSOPHY</a></li>
+      <li><a href="publications.html">PUBLICATIONS</a></li>
+      <li><a href="gradient.html">ENIGMA 🌈</a></li>
+    </ul>
+  </div>
+</nav>
 
-<section class="some-related-articles" id="about">
-  <h1></h1>
-  </br>
-  </br>
-  </br>
-  </br>
-  <p align="left">    </p>
-  </br>
-</section>
+<main>
+  <div class="container">
+    
+    <div class="hero-image">
+      <img src="./assets/research3.png" alt="Research Overview" />
+    </div>
 
-<section class="some-related-articles">
-        </br>
-        </br>
-        </br>
-        <div style="height: 250px">
-             <img src="./assets/research3.png" alt=" " style="width: 100%;max-height: 100%" />
+    <section id="framework">
+      <h2>Research Framework</h2>
+      <p>Brain organization is neither purely genetic nor purely environmental; it's the interaction that matters. Genetic and evolutionary constraints provide a scaffold, but this architecture is continuously sculpted by social experience through neurodevelopmental processes, learning-related plasticity, and aging-related change.</p>
+      
+      <p>At the microscale, cortical laminar organization and myeloarchitecture provide substrates for local computation. At the macroscale, organizational gradients and network configurations enable integrated processes including perception, memory, decision-making, and social cognition. The extended period of human neurodevelopment and our reliance on social relationships for learning make the social environment a particularly potent sculptor of brain architecture.</p>
+      
+      <p>We examine how this biosocial architecture both constrains and enables cognitive capacities, and how these relationships operate bidirectionally over developmental and evolutionary time. At the same time, even if genes and evolution shape brain organization, we must not forget the environment plays a crucial role in shaping our brains and minds.</p>
+    </section>
+
+    <section id="pillars">
+      <h2>Research Pillars</h2>
+
+      <div class="pillar">
+        <h3>Pillar 1: Neurogenetic Principles of Brain Organization</h3>
+        
+        <div class="pillar-content">
+          <p>Understanding how the brain supports interaction with the social environment requires knowing the genetic and evolutionary constraints that shape neural architecture. It's like understanding the blueprint before you can understand how people use the building.</p>
+          
+          <div class="key-questions">
+            <h4>Key Questions:</h4>
+            <ul>
+              <li>What genetic factors constrain brain organization?</li>
+              <li>What structural and functional differences between humans and non-human primates provide clues about the evolutionary basis of human cognitive capacities?</li>
+              <li>How does brain architecture support function, and how do these relationships vary across scales?</li>
+            </ul>
+          </div>
+          
+          <h4>What we do:</h4>
+          <p>We combine ultra-high resolution imaging with large-scale population datasets and cross-species comparisons. Our computational models link microstructural organization to network dynamics and cognitive functions, revealing evolutionarily conserved principles alongside human-specific adaptations. For instance, we've found that organizational axes of the human cortex align with dual-origin theory and are conserved across primates—suggesting these principles may be fundamental organizing features shaped by evolution.</p>
+          
+          <p><strong>Representative work:</strong> <a href="#" class="pub-link">Valk 2020, Science Advances</a>; <a href="#" class="pub-link">Valk 2022, Nature Communications</a>; <a href="#" class="pub-link">Wan 2022, eLife</a>; <a href="#" class="pub-link">Magielse 2023, Communications Biology</a>; <a href="#" class="pub-link">Saberi 2024, Science Advances</a></p>
         </div>
-</section>
+        
+        <div class="pillar-image">
+          <img src="assets/new_web1.tif" alt="Brain organization illustration" class="clickable-img">
+        </div>
+      </div>
 
+      <div class="pillar">
+        <h3>Pillar 2: Plasticity and Environment</h3>
+        
+        <div class="pillar-content">
+          <p>Genetic scaffolding is just the starting point. Brain organization is continually shaped by environmental experience—through neurodevelopment, context-specific plasticity, and aging. The human cortex has an extended maturation period, making it particularly sensitive to sociocultural learning and social experience.</p>
+          
+          <div class="key-questions">
+            <h4>Key Questions:</h4>
+            <ul>
+              <li>How do systematic variations in brain architecture relate to differential potential for plasticity?</li>
+              <li>How do different social-environmental factors—from early developmental contexts to adult learning experiences—differentially impact brain organization?</li>
+              <li>What defines critical or sensitive periods for social learning, and how do these relate to lifespan brain trajectories?</li>
+            </ul>
+          </div>
+          
+          <h4>What we do:</h4>
+          <p>We study plasticity across contexts and scales. Ultra-high resolution imaging helps us understand the neural basis of plasticity (for example, we've shown that training in social skills induces structural changes in divergent social brain networks). Longitudinal datasets let us track change over time. Global neuroscience initiatives help us understand brain variability beyond WEIRD (Western, Educated, Industrialized, Rich, Democratic) populations—because if we only study one slice of humanity, we're missing most of the picture.</p>
+          
+          <p><strong>Representative work:</strong> <a href="#" class="pub-link">Valk 2017, Science Advances</a>; <a href="#" class="pub-link">Hettwer 2024, Nature Communications</a></p>
+        </div>
+        
+        <div class="pillar-image">
+          <img src="assets/web2_new.tif" alt="Brain plasticity illustration" class="clickable-img">
+        </div>
+      </div>
 
-<section class="some-related-articles">
-  </br>
-  </br>
-  <h1>Our questions and how and why we try to answer them</h1>
-<p align="left">
-Using advanced brain imaging techniques and computational models, we try to understand how the brain balances structural and functional stability and plasticity across the lifespan. At the core of our work is a focus on how the physical architecture of the brain shapes its many functions—and how these functions feed back to reshape that architecture over time. Given the extended period of human neurodevelopment and our reliance on social relationships for learning and growth, we pay special attention to the role social factors play in shaping brain structure and cognitive function.
-<br><br>
-To tackle these questions, we draw on diverse data sources, including MRI-based neuroanatomy, histology, genomics, geocoded information, task-based assessments, and self-reports. This broad approach helps us unravel the complex interplay between brain structure and function, genes and (social) environment, over time.
-<br><br>
-We believe in open and transparent science, sharing all our code on GitHub and publishing our findings with open access. Our lab culture values inquiry, collaboration, and mutual respect, where we learn and grow together. Below, we outline our key research areas and goals:
-</p>
+      <div class="pillar">
+        <h3>Pillar 3: Translational Computational Neuroscience</h3>
+        
+        <div class="pillar-content">
+          <p>Moving from descriptive observation to models that can inform clinical practice requires integrating multi-scale brain data with social-environmental context. Current approaches often rely on macro-anatomical markers that miss subtle variations underlying cognitive and psychiatric phenotypes. Moreover, they frequently treat biology as deterministic, ignoring how social context and past experience shape future health outcomes.</p>
+          
+          <div class="key-questions">
+            <h4>Key Questions:</h4>
+            <ul>
+              <li>How can advanced models integrating multi-scale brain architecture contribute to mechanistic understanding of cognitive trajectories and mental health?</li>
+              <li>Can structural and functional brain alterations serve as transdiagnostic markers across diverse populations?</li>
+              <li>How can ultra-high-resolution imaging insights be translated into clinically useful tools?</li>
+              <li>What is the role of social and environmental factors in modulating brain-behavior relationships in health and disease?</li>
+            </ul>
+          </div>
+          
+          <h4>What we do:</h4>
+          <p>We build computational models that integrate structural, functional, and behavioral data—accounting for non-linear relationships across biological scales. Through collaborations with clinical partners via ENIGMA-Gradients, we evaluate brain organization in clinical populations. Critically, we aim to integrate socio-environmental information with neurobiological data to develop true biosocial models of health and disease, recognizing that health outcomes stem from interactions between genetic predisposition, brain architecture, and social context.</p>
+          
+          <p><strong>Representative work:</strong> <a href="#" class="pub-link">Hettwer 2022, Nature Communications</a>; <a href="#" class="pub-link">Wan 2024, Molecular Psychiatry</a>; <a href="#" class="pub-link">Saberi 2025, Science Advances</a></p>
+        </div>
+        
+        <div class="pillar-image">
+          <img src="assets/gradientwg.png" alt="Brain disorder impact gradient" class="clickable-img">
+        </div>
+      </div>
+    </section>
+<section id="methods">
+            <h2>How We Work</h2>
+            <p>Our research integrates multiple complementary approaches:</p>
+            
+            <div class="method-list">
+                <div class="method-item">
+                    <strong>Ultra-high resolution imaging</strong>
+                    Leveraging tools like BigBrain to examine cortical microstructure, laminar organization, and cellular composition at unprecedented detail—helping us understand the building blocks of brain organization
+                </div>
+                
+                <div class="method-item">
+                    <strong>Large-scale population neuroscience</strong>
+                    Analyzing datasets spanning thousands of individuals across diverse populations and developmental stages
+                </div>
+                
+                <div class="method-item">
+                    <strong>Cross-species comparative neuroscience</strong>
+                    Examining organization across primate species to identify what's evolutionarily conserved and what's uniquely human
+                </div>
+                
+                <div class="method-item">
+                    <strong>Computational modeling</strong>
+                    Developing dynamic models linking structure to function—biophysical simulations, network analyses, machine learning approaches
+                </div>
+                
+                <div class="method-item">
+                    <strong>Longitudinal designs</strong>
+                    Tracking brain changes over time to understand plasticity, development, and aging
+                </div>
+            </div>
+        </section>
 
-<style>
-  .row {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5em;
-    margin-bottom: 3em;
-  }
-  .row img {
-    width: 35%;
-    max-width: 280px;
-    border-radius: 8px;
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  .row img:hover {
-    transform: scale(1.05);
-  }
-  .row div.text {
-    width: 65%;
-  }
-  @media (max-width: 768px) {
-    .row {
-      flex-direction: column;
-    }
-    .row img, .row div.text {
-      width: 100%;
-    }
-  }
+        <hr>
 
-  /* Modal styles */
-  #imgModal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    padding-top: 5vh;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 90vh;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.85);
-  }
-  #imgModal img {
-    margin: auto;
-    display: block;
-    max-width: 90vw;
-    max-height: 80vh;
-    border-radius: 10px;
-  }
-  #imgModal .close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-</style>
+        <section id="team">
+            <h2>Team Structure</h2>
+            <p>Our work is organized into three synergistic research groups that bridge themes and scales:</p>
+            
+            <div class="team-group">
+                <strong>Precision Imaging and Social Health</strong> (co-led by Dr. Jessica Royer)<br>
+                Investigating how ultra-high resolution structural features relate to social cognition and environmental context
+            </div>
+            
+            <div class="team-group">
+                <strong>Clinical Neuroimaging and Lifespan Models</strong> (co-led by Dr. Clara Weber)<br>
+                Developing translational approaches to understand brain organization across development, aging, and clinical populations
+            </div>
+            
+            <div class="team-group">
+                <strong>Computation and Methods Development</strong> (co-led by Dr. Amin Saberi)<br>
+                Creating advanced analytical tools to integrate multi-scale neurobiological data and model brain dynamics
+            </div>
+        </section>
 
-<div class="row">
-  <div class="text">
-    <h2>Principles of brain organisation</h2>
-    <p>
-      To understand how brain structure both constrains and enables function, we investigate its neurobiological, genetic, and evolutionary basis. Our previous research showed that brain structure is genetically organized along large-scale axes (Valk et al., 2020) and clarified the layer-specific organization of the human brain (Saberi et al., 2023). We also identified heritable intrinsic microstructural and functional asymmetries in regions involved in language and attention (Wan et al., 2022, eLife; Wan et al., 2024).
-    </p>
+        <hr>
+
+        <section id="location">
+            <h2>Where We Are</h2>
+            <p>We're based at the <strong>Max Planck Institute for Human Cognitive and Brain Sciences</strong> in Leipzig and <strong>INM-7, Forschungszentrum Jülich</strong> in Jülich, Germany.</p>
+            
+            <p>We're part of the <strong>Helmholtz International BigBrain Analytics & Learning Laboratory</strong>, a collaboration between Forschungszentrum Jülich and the Montreal Neurological Institute, Canada.</p>
+            
+            <p>We maintain active collaborations with clinical and research partners worldwide, including through the ENIGMA-Gradients consortium.</p>
+        </section>
+
+        <div class="cta">
+            <h2>Join Us</h2>
+            <p>We welcome trainees and collaborators interested in computational neuroscience, multi-scale brain imaging, and biosocial approaches to brain health. We particularly value diverse perspectives and backgrounds that broaden our understanding of brain organization beyond traditional WEIRD samples.</p>
+            
+            <p>Understanding the major axes of brain organization is like having a compass—it helps us better navigate in the brain. If you're interested in helping develop that compass, we'd love to hear from you.</p>
+            
+            <div class="links">
+                <a href="#opportunities">Opportunities</a>
+                <a href="#publications">Publications</a>
+                <a href="#team">Team</a>
+            </div>
+        </div>
   </div>
-  <img src="assets/new_web1.tif" alt="Brain organization illustration" class="clickable-img">
-</div>
-
-<div class="row">
-  <div class="text">
-    <h2>Biological factors</h2>
-    <p>
-      Our second research focus is how biological factors, such as genetics, hormones, and immune responses, influence brain structure and function throughout life. For example, stress hormones like cortisol affect brain function, while genetic predispositions interact with the social environment to shape neural development. Our recent studies revealed sex differences in brain structure and function, emphasizing the importance of considering sex-specific factors in brain research (Küchenhoff et al., 2024; Serio et al., 2024). Also,
-      we have investigated the relationship between brain organization and metabolic markers (Wan, bioRxiv) and genetic variation (Wan, bioRxiv).
-    </p>
-  </div>
-  <img src="assets/web2_new.tif" alt="Brain plasticity illustration" class="clickable-img">
-</div>
-
-<div class="row">
-  <div class="text">
-    <h2>The living brain</h2>
-    <p>
-      While genetics shape brain structure, environmental factors play a crucial role in brain function across the lifespan. Because of the extended maturation of the cerebral cortex and the effects of sociocultural learning, we focus especially on the social environment. Previous work demonstrated that changes in social demands, such as through mental training, can alter cortical structure and function, improving social cognitive abilities (Valk, 2017; Valk, 2023). More recently, we showed that microstructural brain changes support resilient adaptation during adolescence, reflecting a complex interplay between neurobiology, internal models, and responses to adversity (Hettwer et al., 2024). Importantly, the brain is not a passive recipient of social input—it actively produces social cognition to navigate interactions. Recent findings identified the cerebellar crus I/II as central to developing social cognitive functions in early childhood (Manoli et al., 2025).
-    </p>
-  </div>
-  <img src="assets/web3_new.tif" alt="Social neuroscience illustration" class="clickable-img">
-</div>
-
-<div class="row">
-  <div class="text">
-    <h2>Translation and global neuroscience</h2>
-    <p>
-      We integrate our models of brain organization with maps of disorder impact to better understand how brain structure and function form biological axes in which mental disorders are embedded. These insights help use to understand alterations in brain structure and function in brain disorders and conditions, predict how they may progress, but also investigate what kind of interventions may help.
-    </p>
-  </div>
-  <img src="assets/gradientwg.png" alt="Brain disorder impact gradient" class="clickable-img">
-</div>
-
-<div class="row">
-  <div class="text">
-    <h2>Tools and community</h2>
-    <p>
-      Led by Amin, we developed CUBNM, a toolbox that uses GPUs to efficiently simulate brain network models based on neural mass models connected through a connectome, fitting them to empirical neuroimaging data via integrated optimization algorithms. In collaboration with the mica-lab, we co-developed brainspace, a statistical and decoding toolbox in MATLAB and Python. By building and sharing these tools, we aim to contribute to robust and integrative neuroscience.
-    </p>
-  </div>
-  <img src="assets/cubnm_new.tif" alt="CUBNM toolbox" class="clickable-img">
-</div>
+</main>
 
 <!-- Modal for image zoom -->
 <div id="imgModal">
   <span class="close">&times;</span>
   <img id="modalImg" src="" alt="Enlarged image">
 </div>
+
+<footer>
+  <div class="copyright">
+    <p>© 2025 Dr. Sofie Valk. All rights reserved.</p>
+    <a href="mailto:valk@cbs.mpg.de">contact</a>
+  </div>
+  <div class="footerLinks">
+    <a href="impressum.html">Impressum</a>
+  </div>
+</footer>
 
 <script>
   const modal = document.getElementById('imgModal');
@@ -199,7 +650,6 @@ We believe in open and transparent science, sharing all our code on GitHub and p
     modalImg.src = '';
   });
 
-  // Also close modal on click outside image
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
       modal.style.display = 'none';
@@ -208,27 +658,5 @@ We believe in open and transparent science, sharing all our code on GitHub and p
   });
 </script>
 
-
-
-
-
-  </center>
-  </br>
-  </br>
-</section>
-
-
 </body>
 </html>
-
-<footer>
-      <div class="copyright" align="center">
-        <p>© 2025 Dr. Sofie Valk. All rights reserved.</p>
-       
-        <a class="copyright" href="mailto:valk@cbs.mpg.de">contact</a>
-      </div>
-      <div class="footerLinks" align="center">
-        <a href="impressum.html">Impressum</a>
-      </div>
-      </p>
-</footer>
