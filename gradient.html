@@ -2,79 +2,377 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>&#x1f308;</title>
+<title>ENIGMA 🌈 Gradient Working Group</title>
 <meta name="description" content="Cognitive neurogenetics">
 <meta name="author" content="valk@cbs.mpg.de">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
-<link rel="stylesheet" href="assets/base.css">
-<link rel="stylesheet" href="fixed-navigation-bar.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* Fixed Navigation Bar */
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.menu {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-items {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu-items li {
+  display: inline-block;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 15px;
+}
+
+.menu-items a:hover {
+  color: #666;
+}
+
+.show, .hide {
+  display: none;
+}
+
+/* Main Content */
+main {
+  margin-top: 80px;
+  padding: 40px 20px 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #222;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin: 35px 0 20px 0;
+  color: #333;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 1.05em;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* Hero Image */
+.hero-image {
+  text-align: center;
+  margin: 40px 0 50px 0;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 8px;
+}
+
+/* Links in text */
+p a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+p a:hover {
+  color: #004499;
+  text-decoration: underline;
+}
+
+/* Aims List */
+.aims-list {
+  margin: 25px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.aims-list li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+  font-size: 1.05em;
+  line-height: 1.7;
+}
+
+.aims-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Chairs Section */
+.chairs-section {
+  background-color: #f9f9f9;
+  padding: 30px;
+  margin: 40px 0;
+  border-radius: 8px;
+  border-left: 4px solid #666;
+}
+
+.chairs-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.chairs-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.chairs-list li {
+  margin-bottom: 12px;
+  font-size: 1.05em;
+}
+
+.chairs-list a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.chairs-list a:hover {
+  color: #004499;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #f5f5f5;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 80px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.copyright {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.copyright a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.copyright a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.footerLinks a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  color: #333;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 800px) {
+  /* Mobile Menu */
+  .menu {
+    position: relative;
+    justify-content: flex-start;
+  }
+  
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px 0;
+    gap: 0;
+  }
+  
+  .menu-items li {
+    text-align: center;
+    padding: 12px 0;
+  }
+  
+  .show, .hide {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .show::before {
+    content: "☰";
+  }
+  
+  .hide::before {
+    content: "✕";
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  #menu:target .show {
+    display: none;
+  }
+  
+  #menu:target .hide,
+  #menu:target .menu-items {
+    display: flex;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 20px 15px 40px;
+  }
+  
+  .chairs-section {
+    padding: 20px;
+  }
+  
+  .aims-list li {
+    padding-left: 25px;
+  }
+}
+</style>
 </head>
 <body>
 
-    <nav class="fixed-nav-bar">
-      <div id="menu" class="menu" align="center">
-        <!-- Example responsive navigation menu  -->
-        <a class="show" href="#menu">menu</a><a class="hide" href="#hidemenu">menu</a>
-        <ul class="menu-items">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="#about">about</a></li>
-          <li><a href="research.html">research</a></li>
-          <li><a href="people.html">people</a></li>
-          <li><a href="philosophy.html">philosophy</a></li>
-          <li><a href="publications.html">publications</a></li>
-          <li><a href="gradient.html">enigma &#x1f308; </a></li>
-      </ul>
+<nav class="fixed-nav-bar">
+  <div id="menu" class="menu">
+    <a class="show" href="#menu"></a>
+    <a class="hide" href="#hidemenu"></a>
+    <ul class="menu-items">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="research.html">RESEARCH</a></li>
+      <li><a href="people.html">PEOPLE</a></li>
+      <li><a href="philosophy.html">PHILOSOPHY</a></li>
+      <li><a href="publications.html">PUBLICATIONS</a></li>
+      <li><a href="gradient.html">ENIGMA 🌈</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <section id="enigma-gradient">
+      <h1>ENIGMA Gradient Working Group</h1>
+      
+      <div class="hero-image">
+        <img src="./assets/gradientwg.png" alt="ENIGMA Gradient Working Group" />
       </div>
-    </nav>
+      
+      <p>Investigations on principles of brain organization in health and disease have gained significant traction over the last decade. One important approach to understanding principles of brain organization is through evaluating so-called gradients of brain organization, also called axes or dimensions [<a href="https://pubmed.ncbi.nlm.nih.gov/35151850/">1</a>]. Gradients describe modes of smooth variations of regional and inter-regional brain features (such as connectivity and covariance with other regions) across the cortical mantle, but can also be implemented in subcortical areas such as thalamus and striatum, and cerebellum [<a href="https://pubmed.ncbi.nlm.nih.gov/37758726/">2</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/28804783/">3</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30106371/">4</a>].</p>
+      
+      <p>So far, gradient-based approaches have gained key insights in associations between brain organization and genetic variation, histology, neurotransmitter receptors/transporter distributions, developmental change, aging, plasticity, and cognition [<a href="https://pubmed.ncbi.nlm.nih.gov/30082915/">5</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/37440423/">6</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/27791099/">7</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/31107870/">8</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35534454/">9</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/37417306/">10</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35904242/">11</a>]. Moreover, the gradient framework can be applied in disorder, to understand how and which principles of brain organization are differing in a case-control setting, or explore how different disorders show shared co-alteration patterns [<a href="https://pubmed.ncbi.nlm.nih.gov/36369423/">12</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30833582/">13</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/37082950/">14</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/32144421/">15</a>].</p>
+      
+      <p>However, important questions in this field on generalizability and heterogeneity of gradients across the lifespan and states, as well as clinical alterations, and system-level perspectives on symptoms and healthy brain function, cannot be fully addressed without scaling up of investigations to much larger and more diverse samples, which may be achieved by taking advantage of available data collected at multiple sites.</p>
+      
+      <p>The ENIGMA-Gradient working group aims to use the ENIGMA collaborative model to address questions related to associations between organizational axes in brain structure and function in healthy and clinical samples, beginning with a focus on normative and cross-disorder gradients.</p>
+      
+      <h2>Aims</h2>
+      <p>The aims of this group include:</p>
+      
+      <ul class="aims-list">
+        <li>Understanding principal axes in functional and structural organization across sites, age-ranges, to uncover principles of organization and map its variation in a systematic fashion</li>
+        <li>Investigating the principles of brain organization in disease across the lifespan</li>
+        <li>Initiating a data acquisition framework to acquire ultra-high resolution microstructural and intrinsic functional MRI data probing brain organization</li>
+        <li>Developing and providing tools for the research community (such as <a href="http://brainspace.readthedocs.io">BrainSpace</a>)</li>
+      </ul>
+      
+      <div class="chairs-section">
+        <h2>Chairs</h2>
+        <ul class="chairs-list">
+          <li>Sofie Valk – <a href="mailto:valk@cbs.mpg.de">valk@cbs.mpg.de</a></li>
+          <li>Matthias Kirschner – <a href="mailto:matthiaskirschner@gmail.com">matthiaskirschner@gmail.com</a></li>
+          <li>Clara Moreau – <a href="mailto:cmoreau@usc.edu">cmoreau@usc.edu</a></li>
+          <li>Boris Bernhardt – <a href="mailto:boris.bernhardt@mcgill.ca">boris.bernhardt@mcgill.ca</a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
 
-<section class="some-related-articles">
-  </br>
-  </br>
-  <h1>Enigma gradient working group</h1>
-  </br>
-  
-          <div style="height: 150px">
-               <img src="./assets/gradientwg.png" alt=" " class="center" style="max-height: 100%" />
-          </div>
-  </br>
-  <p align="left"> Investigations on principles of brain organization in health and disease have gained significant traction over the last decade. One important approach to understanding principles of brain organization is through evaluating so-called gradients of brain organization, also called axes or dimensions [<a href="https://pubmed.ncbi.nlm.nih.gov/35151850/">1</a>]. Gradients describe modes of smooth variations of regional and inter-regional brain features (such as connectivity and covariance with other regions) across the cortical mantle, but can also be implemented in subcortical areas such as thalamus and striatum, and cerebellum [<a href="https://pubmed.ncbi.nlm.nih.gov/37758726/">2</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/28804783/">3</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30106371/">4</a>]. So far, gradient-based approaches have gained key insights in associations between brain organization and genetic variation, histology, neurotransmitter receptors/transporter distributions, developmental change, aging, plasticity, and cognition [<a href="https://pubmed.ncbi.nlm.nih.gov/30082915/">5</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/37440423/">6</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/27791099/">7</a>,<a href="https://pubmed.ncbi.nlm.nih.gov/31107870/">8</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35534454/">9</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/37417306/">10</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35904242/">11</a>]. Moreover, the gradient framework can be applied in disorder, to understand how and which principles of brain organization are differing in a case-control setting, or explore how different disorders show shared co-alteration patterns [<a href="https://pubmed.ncbi.nlm.nih.gov/36369423/">12</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30833582/">13</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/37082950/">14</a>,<a href="https://pubmed.ncbi.nlm.nih.gov/32144421/">15</a>]. However, important questions in this field on generalizability and heterogeneity of gradients across the lifespan and states, as well as clinical alterations, and system-level perspectives on symptoms and healthy brain function, cannot be fully addressed without scaling up of investigations to much larger and more diverse samples, which may be achieved by taking advantage of available data collected at multiple sites.
-  </br>
-  </br>
-  The ENIGMA-Gradient working group aims to use the ENIGMA collaborative model to address questions related to associations between organizational axes in brain structure and function in healthy and clinical samples, beginning with a focus on normative and cross-disorder gradients.
-  </br>
-  </br>
-  The aims of this group include:
-  </br>
- <li> understanding principal axes in functional and structural organization across sites, age-ranges, to uncover principles of organization and map its variation in a systematic fashion. </li>
- <li>investigating the principles of brain organization in disease across the lifespan.</li>
- <li>initiating a data acquisition framework to acquire ultra-high resolution microstructural and intrinsic functional MRI data probing brain organization.</li>
- <li>developing and providing tools for the research community (such as <a href="http://brainspace.readthedocs.io">brainspace</a>)</li>
-  </br>
-  </p><p>
-  Chairs:
-  
-  <li>Sofie Valk – sofievalk [at] gmail.com </li>
-  <li>Matthias Kirschner – matthiaskirschner [at] gmail.com </li>
-  <li>Clara Moreau – cmoreau [at] usc.edu </li>
-  <li>Boris Bernhardt – boris.bernhardt [at] mcgill.ca </li>
-  </p>
-
-</section>
-
+<footer>
+  <div class="copyright">
+    <p>© 2025 Dr. Sofie Valk. All rights reserved.</p>
+    <a href="mailto:valk@cbs.mpg.de">contact</a>
+  </div>
+  <div class="footerLinks">
+    <a href="impressum.html">Impressum</a>
+  </div>
+</footer>
 
 </body>
 </html>
-
-<footer>
-      <div class="copyright" align="center">
-        <p>© 2023 Cognitive neurogenetics, Sofie Valk. All rights reserved.</p>
-       
-        <a class="copyright" href="mailto:valk@cbs.mpg.de">contact</a>
-      </div>
-      <div class="footerLinks" align="center">
-        <a href="impressum.html">Impressum</a>
-      </div>
-      </p>
-</footer>
